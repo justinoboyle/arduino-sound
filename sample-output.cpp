@@ -2,6 +2,7 @@
 int PIN = 12;
 
 // Generated with a script to automatically generate a tone song in Arduino.
+// Learn more: https://github.com/justinoboyle/arduino-sound
 
 void setup() {
 	tone(PIN, 311, 200);

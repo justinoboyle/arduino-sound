@@ -124,6 +124,7 @@ console.log(`
 int PIN = ${PIN};
 
 // Generated with a script to automatically generate a tone song in Arduino.
+// Learn more: https://github.com/justinoboyle/arduino-sound
 
 void setup() {
 \t${outputArray.join(';\n\t') + ';'}
