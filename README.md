@@ -2,7 +2,7 @@
 
 This Node.JS script takes an input file of piano notation (I used notation from pianoletternotes.blogspot.com) and converts it into valid C++ code.
 
-[View script](https://github.com/justinoboyle/arduino-sound/blob/master/arduino-script.js)
+[View script](https://github.com/justinoboyle/arduino-sound/blob/master/arduino-script.js) | [View sample input](https://github.com/justinoboyle/arduino-sound/blob/master/sample-input) | [View sample output](https://github.com/justinoboyle/arduino-sound/blob/master/sample-output.cpp)
 
 ## Usage
 
