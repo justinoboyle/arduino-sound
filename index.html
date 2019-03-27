@@ -1,0 +1,71 @@
+<script src="converter.js"></script>
+<script src="templates.js"></script>
+<div class="container">
+    <div class="innerContainer">
+        <div class="textareaHolder">
+            <h1>Input</h1>
+            <textarea name="input" id="input"></textarea>
+        </div>
+        <div class="textareaHolder">
+            <h1>Output</h1>
+            <textarea name="output" id="output"></textarea>
+        </div>
+    </div>
+    <div class="bottomContainer">
+        <h1>Templates</h1>
+        <templates></templates>
+    </div>
+</div>
+<script>
+input = document.getElementById('input')
+output = document.getElementById('output')
+templates = document.getElementsByTagName('templates')[0]
+
+templates.innerHTML = `<table>
+<tr>
+    ${_TEMPLATES.map(a => `<td><a href="#" onclick="setInput('${btoa(a.content)}')">${a.name}</a></td>`)}
+</tr>
+</table>
+`.trim()
+
+input.onkeydown = async _ => {
+    try {
+        let a = input.value
+        a = a.split('\n').map(b => b.trim())
+        output.value = converter(a)
+    } catch(e) {
+        output.value = e
+    }
+}
+
+function setInput(a) {
+    input.value = atob(a).split('\n').map(b => b.trim()).join('\n')
+    input.onkeydown()
+}
+
+</script>
+<style>
+.innerContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+.textareaHolder {
+    width: 100%;
+}
+.textareaholder>textarea {
+    width: 100%;
+    height: 450px;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+}
+.bottomContainer {
+
+}
+table {
+    width: 100%;
+    text-align: center;
+}
+</style>
